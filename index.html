@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Web Craft Pro - Hệ thống Tạo Website 4 Tầng AI (Ver 1.0)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#1e1b4b',
+                            accent: '#06b6d4'
+                        },
+                        dark: {
+                            bg: '#090d16',
+                            card: '#111827',
+                            border: '#1f2937',
+                            hover: '#1f293d'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #090d16;
+            color: #f3f4f6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glow-effect {
+            position: relative;
+        }
+        .glow-effect::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #4f46e5, #06b6d4, #4f46e5);
+            border-radius: inherit;
+            z-index: -1;
+            filter: blur(12px);
+            opacity: 0.35;
+            transition: opacity 0.3s ease;
+        }
+        .glow-effect:hover::before {
+            opacity: 0.7;
+        }
+        .pipeline-line {
+            background: linear-gradient(to bottom, #4f46e5, #06b6d4);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-500 selection:text-white">
+
+    <header class="fixed top-0 left-0 w-full z-50 bg-dark-bg/80 backdrop-blur-md border-b border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-3 h-3 bg-brand-500 rounded-full animate-pulse"></div>
+                <span class="font-extrabold text-xl tracking-tight text-white">AI Web Craft <span class="text-brand-500">Pro</span></span>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-brand-500/10 text-brand-500 border border-brand-500/20">VER 1.0</span>
+            </div>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                <a href="#architecture" class="hover:text-white transition-colors">Kiến trúc 4 Tầng AI</a>
+                <a href="#comparison" class="hover:text-white transition-colors">Các Phiên Bản</a>
+                <a href="#download" class="hover:text-white transition-colors">Thông Số File</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="#download" class="inline-flex items-center justify-center px-4 py-2 text-xs font-semibold tracking-wider text-white uppercase transition-all duration-200 bg-brand-600 rounded-md hover:bg-brand-500 border border-brand-500/30 shadow-lg shadow-brand-600/20">
+                    Tải Ver 1.0 (.EXE)
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative pt-36 pb-20 md:pt-48 md:pb-32 overflow-hidden border-b border-dark-border">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-600/15 blur-[120px] rounded-full pointer-events-none"></div>
+        
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-dark-card border border-dark-border text-xs font-mono text-gray-300 mb-8">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span>Phát hành chính thức v1.0.0 — Bản Executable Cho Windows</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-[1.15] mb-6">
+                Xây dựng Website Hoàn Chỉnh Với <br>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-500 via-cyan-400 to-indigo-300">
+                    Hệ Thống Tự Động 4 Tầng AI
+                </span>
+            </h1>
+
+            <p class="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto font-normal leading-relaxed mb-10">
+                Biến ý tưởng sơ sài thành mã nguồn hoàn chỉnh. Quy trình khép kín tự động tối ưu hóa prompt, lập trình giao diện, xử lý logic tương tác và kiểm thử sửa lỗi mã nguồn.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#download" class="w-full sm:w-auto px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-lg shadow-xl shadow-brand-600/25 border border-brand-400/30 transition-all duration-200 text-center glow-effect">
+                    Tải Xuống Ngay — Ver 1.0 (.EXE)
+                </a>
+                <a href="#architecture" class="w-full sm:w-auto px-8 py-4 bg-dark-card hover:bg-dark-hover text-gray-200 font-semibold rounded-lg border border-dark-border transition-all duration-200 text-center">
+                    Tìm Hiểu Kiến Trúc AI
+                </a>
+            </div>
+
+            <!-- Fast Spec Grid -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 text-left border-t border-dark-border/60 pt-8">
+                <div class="p-4 rounded-lg bg-dark-card/40 border border-dark-border/40">
+                    <p class="text-xs font-mono text-gray-500 uppercase">Layer 1</p>
+                    <p class="text-sm font-semibold text-gray-200 mt-1">Prompt Refiner</p>
+                </div>
+                <div class="p-4 rounded-lg bg-dark-card/40 border border-dark-border/40">
+                    <p class="text-xs font-mono text-gray-500 uppercase">Layer 2</p>
+                    <p class="text-sm font-semibold text-gray-200 mt-1">UI/UX Layout Generator</p>
+                </div>
+                <div class="p-4 rounded-lg bg-dark-card/40 border border-dark-border/40">
+                    <p class="text-xs font-mono text-gray-500 uppercase">Layer 3</p>
+                    <p class="text-sm font-semibold text-gray-200 mt-1">Feature Logic Coder</p>
+                </div>
+                <div class="p-4 rounded-lg bg-dark-card/40 border border-dark-border/40">
+                    <p class="text-xs font-mono text-gray-500 uppercase">Layer 4</p>
+                    <p class="text-sm font-semibold text-gray-200 mt-1">Code Auditor & Fixer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="architecture" class="py-24 bg-dark-bg border-b border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="text-xs font-mono uppercase tracking-widest text-brand-500 mb-3">[ Architecture Pipeline ]</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Quy Trình Xử Lý 4 Tầng Chuyên Biệt</h3>
+                <p class="text-gray-400 mt-4 text-base">Mỗi tầng AI đảm nhận một vai trò độc lập, tương tự như một đội ngũ phát triển phần mềm chuyên nghiệp.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Layer 1 -->
+                <div class="p-6 rounded-xl bg-dark-card border border-dark-border hover:border-brand-500/50 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-xs font-mono font-bold px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">LAYER 01</span>
+                            <span class="text-xs font-mono text-gray-500">INPUT -> PROMPT</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Prompt Enhancer</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                            Tiếp nhận yêu cầu sơ sài từ người dùng. Phân tích ngữ cảnh, bổ sung chuẩn UI/UX, chỉ định cấu trúc logic và tạo ra Prompt kỹ thuật tối ưu.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dark-border font-mono text-xs text-gray-500">
+                        Output: Structured Specs
+                    </div>
+                </div>
+
+                <!-- Layer 2 -->
+                <div class="p-6 rounded-xl bg-dark-card border border-dark-border hover:border-cyan-500/50 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-xs font-mono font-bold px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">LAYER 02</span>
+                            <span class="text-xs font-mono text-gray-500">PROMPT -> UI CODE</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">UI/UX Coder</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                            Chuyển đổi Prompt kỹ thuật thành giao diện HTML/CSS/Tailwind. Đảm bảo tính thẩm mỹ, độ tương thích Responsive và chuẩn Layout thị giác.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dark-border font-mono text-xs text-gray-500">
+                        Output: DOM & Styling
+                    </div>
+                </div>
+
+                <!-- Layer 3 -->
+                <div class="p-6 rounded-xl bg-dark-card border border-dark-border hover:border-emerald-500/50 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-xs font-mono font-bold px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">LAYER 03</span>
+                            <span class="text-xs font-mono text-gray-500">UI -> LOGIC</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Feature Coder</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                            Xây dựng toàn bộ tính năng động, các sự kiện JavaScript, state management và tích hợp luồng xử lý dữ liệu cho trang web.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dark-border font-mono text-xs text-gray-500">
+                        Output: Interactive Features
+                    </div>
+                </div>
+
+                <!-- Layer 4 -->
+                <div class="p-6 rounded-xl bg-dark-card border border-dark-border hover:border-amber-500/50 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-xs font-mono font-bold px-2.5 py-1 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">LAYER 04</span>
+                            <span class="text-xs font-mono text-gray-500">LOGIC -> FINAL APP</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Code Auditor & Fixer</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                            Đọc soát toàn bộ mã nguồn, phát hiện cú pháp lỗi, xung đột JS/CSS, tự động Debug và đóng gói ra file hoàn thiện duy nhất.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dark-border font-mono text-xs text-gray-500">
+                        Output: Bug-Free Build
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="comparison" class="py-24 bg-dark-bg/50 border-b border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="text-xs font-mono uppercase tracking-widest text-brand-500 mb-3">[ Roadmap & Release Versions ]</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Lộ Trình Phát Triển Sản Phẩm</h3>
+                <p class="text-gray-400 mt-4 text-base">So sánh các tính năng qua từng cột mốc phiên bản.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Ver 1.0 (Active) -->
+                <div class="p-8 rounded-2xl bg-dark-card border-2 border-brand-500 relative flex flex-col justify-between shadow-2xl shadow-brand-500/10">
+                    <div class="absolute -top-3.5 right-6 px-3 py-1 rounded-full bg-brand-600 text-[10px] font-mono font-bold tracking-wider text-white uppercase">
+                        Bản Hiện Tại (Phát Hành)
+                    </div>
+                    <div>
+                        <div class="mb-6">
+                            <span class="text-xs font-mono text-brand-400">AVAILABLE NOW</span>
+                            <h4 class="text-2xl font-bold text-white mt-1">Version 1.0</h4>
+                            <p class="text-xs text-gray-400 mt-1">Cốt lõi hệ thống 4 tầng AI cơ bản</p>
+                        </div>
+                        <div class="my-6 py-4 border-y border-dark-border">
+                            <span class="text-3xl font-extrabold text-white">Miễn Phí</span>
+                            <span class="text-xs text-gray-400 font-mono"> / Bản Độc Lập (.EXE)</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-300 font-medium mb-8">
+                            <li class="flex items-center text-xs font-mono">
+                                <span class="w-1.5 h-1.5 rounded-full bg-brand-500 mr-2.5"></span>
+                                AI Layer 1: Prompt Refiner
+                            </li>
+                            <li class="flex items-center text-xs font-mono">
+                                <span class="w-1.5 h-1.5 rounded-full bg-brand-500 mr-2.5"></span>
+                                AI Layer 2: Single-Page UI Coder
+                            </li>
+                            <li class="flex items-center text-xs font-mono">
+                                <span class="w-1.5 h-1.5 rounded-full bg-brand-500 mr-2.5"></span>
+                                AI Layer 3: JS Feature Engine
+                            </li>
+                            <li class="flex items-center text-xs font-mono">
+                                <span class="w-1.5 h-1.5 rounded-full bg-brand-500 mr-2.5"></span>
+                                AI Layer 4: Auto Code Auditor
+                            </li>
+                            <li class="flex items-center text-xs font-mono">
+                                <span class="w-1.5 h-1.5 rounded-full bg-brand-500 mr-2.5"></span>
+                                Xuất File HTML Duy Nhất
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#download" class="w-full py-3 bg-brand-600 hover:bg-brand-500 text-white text-center font-semibold rounded-lg text-sm transition-colors">
+                        Tải Ngay Ver 1.0 (.EXE)
+                    </a>
+                </div>
+
+                <!-- Ver 2.0 (Planned) -->
+                <div class="p-8 rounded-2xl bg-dark-card/60 border border-dark-border opacity-90 flex flex-col justify-between">
+                    <div>
+                        <div class="mb-6">
+                            <span class="text-xs font-mono text-cyan-400">UPCOMING</span>
+                            <h4 class="text-2xl font-bold text-white mt-1">Version 2.0</h4>
+                            <p class="text-xs text-gray-400 mt-1">Nâng cấp Multi-page & SEO AI</p>
+                        </div>
+                        <div class="my-6 py-4 border-y border-dark-border">
+                            <span class="text-3xl font-extrabold text-gray-300">Pro Edition</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-400 font-medium mb-8">
+                            <li class="flex items-center text-xs font-mono">
+                                <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 mr-2.5"></span>
+                                Bao gồm toàn bộ tính năng Ver 1.0
+                            </li>
+                            <li class="flex items-center text-xs font-mono">
+                                <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 mr-2.5"></span>
+                                Khả năng tạo Website Đa Trang (Multi-Page)
+                            </li>
+                            <li class="flex items-center text-xs font-mono">
+                                <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 mr-2.5"></span>
+                                Tích hợp AI Tối Ưu SEO & Content
+                            </li>
+                            <li class="flex items-center text-xs font-mono">
+                                <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 mr-2.5"></span>
+                                Tự động Deploy lên Vercel / Netlify
+                            </li>
+                        </ul>
+                    </div>
+                    <button disabled class="w-full py-3 bg-dark-border text-gray-500 cursor-not-allowed font-semibold rounded-lg text-sm">
+                        Đang Phát Triển
+                    </button>
+                </div>
+
+                <!-- Ver 3.0 (Future) -->
+                <div class="p-8 rounded-2xl bg-dark-card/30 border border-dark-border/60 opacity-75 flex flex-col justify-between">
+                    <div>
+                        <div class="mb-6">
+                            <span class="text-xs font-mono text-purple-400">FUTURE VISION</span>
+                            <h4 class="text-2xl font-bold text-white mt-1">Version 3.0</h4>
+                            <p class="text-xs text-gray-400 mt-1">Hệ sinh thái Enterprise & Custom AI</p>
+                        </div>
+                        <div class="my-6 py-4 border-y border-dark-border/60">
+                            <span class="text-3xl font-extrabold text-gray-400">Enterprise</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-500 font-medium mb-8">
+                            <li class="flex items-center text-xs font-mono">
+                                <span class="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2.5"></span>
+                                Bao gồm toàn bộ tính năng Ver 2.0
+                            </li>
+                            <li class="flex items-center text-xs font-mono">
+                                <span class="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2.5"></span>
+                                Tự động dựng Backend API & Database
+                            </li>
+                            <li class="flex items-center text-xs font-mono">
+                                <span class="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2.5"></span>
+                                Tích hợp Custom LLM Model cá nhân
+                            </li>
+                            <li class="flex items-center text-xs font-mono">
+                                <span class="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2.5"></span>
+                                Làm việc nhóm thời gian thực (Real-time Collaboration)
+                            </li>
+                        </ul>
+                    </div>
+                    <button disabled class="w-full py-3 bg-dark-border/40 text-gray-600 cursor-not-allowed font-semibold rounded-lg text-sm">
+                        Kế Hoạch Tương Lai
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="py-24 bg-dark-bg border-b border-dark-border">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="p-8 sm:p-12 rounded-2xl bg-dark-card border border-dark-border relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-brand-600/10 blur-[80px] rounded-full pointer-events-none"></div>
+
+                <div class="text-center mb-10">
+                    <span class="text-xs font-mono text-brand-500 uppercase tracking-widest">[ DOWNLOAD CENTER ]</span>
+                    <h3 class="text-3xl font-bold text-white mt-2">Tải Xuống Phần Mềm AI Web Craft Pro</h3>
+                    <p class="text-gray-400 text-sm mt-2">Bản cài đặt chính thức (.EXE) tương thích với hệ điều hành Windows.</p>
+                </div>
+
+                <!-- File Specs Dashboard -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-dark-bg p-4 rounded-xl border border-dark-border font-mono text-xs mb-8">
+                    <div>
+                        <span class="text-gray-500 block mb-1">TÊN FILE</span>
+                        <span class="text-gray-200 font-semibold truncate block">CrewAI Pro Studio</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500 block mb-1">DUNG LƯỢNG</span>
+                        <span class="text-gray-200 font-semibold block">408 MB</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500 block mb-1">HỆ ĐIỀU HÀNH</span>
+                        <span class="text-gray-200 font-semibold block">Windows 10/11 64-bit</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500 block mb-1">TRẠNG THÁI</span>
+                        <span class="text-emerald-400 font-semibold block">Sẵn Sàng Tải</span>
+                    </div>
+                </div>
+
+                <!-- Interactive Download CTA -->
+                <div class="text-center">
+                    <button id="downloadBtn" onclick="handleDownload()" class="w-full sm:w-auto px-10 py-4 bg-brand-600 hover:bg-brand-500 active:scale-[0.99] text-white font-bold rounded-lg shadow-xl shadow-brand-600/30 border border-brand-400/30 transition-all duration-200 text-base">
+                        Tải File Cài Đặt (.EXE) — Ver 1.0
+                    </button>
+                    <p class="text-xs font-mono text-gray-500 mt-4">
+                        Mã băm MD5: <span class="text-gray-400">e2c8a9f4b1d03c7e8a91b2c3d4e5f6a7</span>
+                    </p>
+                </div>
+
+                <!-- Toast Notice (Hidden default) -->
+                <div id="downloadNotice" class="hidden mt-6 p-4 rounded-lg bg-brand-500/10 border border-brand-500/30 text-center text-xs font-mono text-brand-400">
+                    Đang khởi tạo liên kết tải xuống file AI_Web_Builder_v1.0.exe... Vui lòng chờ trong giây lát.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-dark-bg text-xs font-mono text-gray-500 border-t border-dark-border/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                &copy; 2026 AI Web Craft Pro. Tất cả quyền được bảo lưu.
+            </div>
+            <div class="flex items-center space-x-6">
+                <span>Kiến Trúc 4 Tầng AI</span>
+                <span>•</span>
+                <span>Phiên Bản 1.0.0</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function handleDownload() {
+            const btn = document.getElementById('downloadBtn');
+            const notice = document.getElementById('downloadNotice');
+            
+            btn.innerHTML = 'Đang Bắt Đầu Tải...';
+            btn.classList.add('opacity-80', 'cursor-wait');
+            // Cập nhật câu thông báo để hướng dẫn người dùng
+            notice.innerHTML = 'Vui lòng bấm "Vẫn tải xuống" trên tab vừa mở. Tab sẽ không tự đóng để đảm bảo tải thành công.';
+            notice.classList.remove('hidden');
+
+            // Đã đổi link sang dạng uc?export=download (bỏ qua trang xem trước của Drive)
+            const driveLink = 'https://drive.google.com/uc?export=download&id=1zf7srEnwQMYnwPoSSHf3zLvWH3F4o8e9';
+            window.open(driveLink, '_blank');
+
+            // Khôi phục nút bấm sau 3 giây, KHÔNG tự động đóng cửa sổ Drive nữa
+            setTimeout(() => {
+                btn.innerHTML = 'Tải Lại File Cài Đặt (.EXE)';
+                btn.classList.remove('opacity-80', 'cursor-wait');
+                
+                setTimeout(() => {
+                    notice.classList.add('hidden');
+                }, 5000);
+            }, 3000); 
+        }
+    </script>
+</body>
+</html>
